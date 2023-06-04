@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+
+<body>
+    <script>
+        class Funcionario {
+            constructor(nome, idade, salario) {
+                this._nome = nome;
+                this._idade = idade;
+                this._salario = salario;
+            }
+            get getNome() {
+                return this._nome;
+            }
+            set setNome(novoNome) {
+                this._nome = novoNome;
+            }
+
+            get getIdade() {
+                return this._idade;
+            }
+            set setIdade(novaIdade) {
+                this._idade = novaIdade;
+            }
+
+            get getSalario() {
+                return this._salario;
+            }
+            set setSalario(novoSalario) {
+                this._salario = novoSalario;
+            }
+        }
+
+        class Gerente extends Funcionario {
+            constructor(nome, idade, salario, departamento) {
+                super(nome, idade, salario)
+                this._departamento = departamento
+            }
+
+            get getDepartamento() {
+                return this._departamento;
+            }
+
+            set setDepartamento(novoDepartamento) {
+                this._departamento = novoDepartamento;
+            }
+        }
+
+        class Programador extends Funcionario {
+            constructor(nome, idade, salario, linguagem) {
+                super(nome, idade, salario);
+                this._linguagem = linguagem;
+            }
+
+            get getLinguagem() {
+                return this._linguagem;
+            }
+
+            set setLinguagem(novaLinguagem) {
+                this._linguagem = novaLinguagem;
+            }
+        }
+
+        // Criação de objetos 
+        const gerente = new Gerente("Graziela", 28, 8000, "Vendas");
+        const programador = new Programador("Eduardo", 23, 5000, "C#");
+
+        // Exibição de informações
+        console.log("Detalhes do Gerente:");
+        console.log(`Nome: ${gerente.getNome}.`);
+        console.log(`Idade: ${gerente.getIdade}.`);
+        console.log(`Salário: ${gerente.getSalario}`);
+        console.log(`Departamento: ${gerente.getDepartamento}.`);
+        console.log('-----------------------------------------');
+        console.log("Detalhes do Programador:");
+        console.log(`Nome: ${programador.getNome}.`);
+        console.log(`Idade: ${programador.getIdade}.`);
+        console.log(`Salário: ${programador.getSalario}.`);
+        console.log(`Linguagem: ${programador.getLinguagem}.`);
+    </script>
+</body>
+
+</html>

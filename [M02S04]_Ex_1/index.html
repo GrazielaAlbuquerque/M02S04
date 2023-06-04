@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            nome;
+            idade;
+            altura;
+            constructor(nome, idade, altura) {
+                this.nome = nome;
+                this.idade = idade;
+                this.altura = altura;
+            }
+
+
+            Apresentar = (nome, idade, altura) => {
+                return (`Olá me chamo ${nome} tenho ${idade} anos, ${altura} de altura.`);
+            }
+        }
+        const pessoa = new Person("Graziela", 28, 1.60);
+        console.log(pessoa.Apresentar(pessoa.nome, pessoa.idade, pessoa.altura));
+
+        class Profissional extends Person {
+            profissao;
+            constructor(nome,idade,altura,profissao) {
+                super(nome, idade, altura);
+                this.profissao = profissao;
+            }
+
+            Apresentar = (nome, idade, altura, profissao) => {
+                return `Olá me chamo ${nome} tenho ${idade} anos, ${altura} de altura e sou ${this.profissao}.`
+            }
+        }
+        const profissional = new Profissional('Graziela', 28, 1.60, 'auxiliar administrativa');
+        console.log(profissional.Apresentar(profissional.nome, profissional.idade, profissional.altura, profissional.profissao))
+    </script>
+</body>
+
+</html>
